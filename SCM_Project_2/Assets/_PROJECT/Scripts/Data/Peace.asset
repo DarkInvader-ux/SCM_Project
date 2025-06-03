@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bbebed90e05a6f4face26cd0ef68ae9, type: 3}
-  m_Name: Rock
+  m_Name: Peace
   m_EditorClassIdentifier: 
-  gestureName: Rock
-  icon: {fileID: 21300000, guid: a5170ec83e198c34b9140da06a9096e0, type: 3}
+  gestureName: Peace
+  icon: {fileID: 21300000, guid: d581ea997bb13914299c253f7d279ef5, type: 3}

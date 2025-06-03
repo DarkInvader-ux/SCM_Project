@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     [System.Serializable]
     public class Level
     {
-        //public Potion potion;
+        public ChordSO Chord;
         public float requiredHoldTime;
         public int currentIngredient;
     }
@@ -28,22 +28,22 @@ public class LevelManager : MonoBehaviour
     private void StartGame()
     {
         var currentLevel = GetCurrentLevel();
-        // if (currentLevel != null && currentLevel.potion != null)
-        // {
-        //     GameObject potionInstance = Instantiate(currentLevel.potion.potionPrefab, Vector3.zero, Quaternion.identity);
-        //     currentPotionController = potionInstance.GetComponent<PotionController>();
-        // }
-        // else
-        // {
-        //     Debug.LogError("No potion prefab found for the current level.");
-        // }
+        if (currentLevel != null && currentLevel.Chord != null)
+        {
+            //GameObject potionInstance = Instantiate(currentLevel.Chord.potionPrefab, Vector3.zero, Quaternion.identity);
+            //currentPotionController = potionInstance.GetComponent<PotionController>();
+        }
+        else
+        {
+            Debug.LogError("No potion prefab found for the current level.");
+        }
     }
 
-    // public Potion GetCurrentPotion()
-    // {
-    //     return levels[currentLevelIndex].potion;
-    // }
-    //
+    public ChordSO GetCurrentPotion()
+    {
+        return levels[currentLevelIndex].Chord;
+    }
+    
     // public PotionController GetPotionController()
     // {
     //     return currentPotionController; 
@@ -82,17 +82,17 @@ public class LevelManager : MonoBehaviour
         var level = GetCurrentLevel();
         if (level == null) return;
         
-        // if (level.potion.requiredIngredients.Count == level.currentIngredient + 1)
-        // {
-        //     currentLevelIndex++;
-        //     EventManager.OnLevelCompleted();
-        //     Debug.LogError("level completed");
-        // }
-        // else
-        // {
-        //     ParticleManager.Instance.PlayCorrectIngredientEffect(Vector3.zero);
-        //     level.currentIngredient++;
-        // }
+        if (level.Chord.GestureSos.Count == level.currentIngredient + 1)
+        {
+            currentLevelIndex++;
+            EventManager.OnLevelCompleted();
+            Debug.LogError("level completed");
+        }
+        else
+        {
+            ParticleManager.Instance.PlayCorrectIngredientEffect(Vector3.zero);
+            level.currentIngredient++;
+        }
     }
 
     public float GetFillTime()
@@ -100,12 +100,12 @@ public class LevelManager : MonoBehaviour
         return GetCurrentLevel()?.requiredHoldTime ?? 0f;
     }
 
-    // public Ingredient GetIngredient()
-    // {
-    //     var potion = GetCurrentPotion();
-    //     var currentIngredient = GetCurrentLevel().currentIngredient;
-    //     if (potion == null || GetCurrentLevel() == null)
-    //         Debug.LogError("Something went wrong");
-    //     return potion.requiredIngredients[currentIngredient];
-    // }
+    public GestureSO GetIngredient()
+    {
+        var chord = GetCurrentPotion();
+        var currentIngredient = GetCurrentLevel().currentIngredient;
+        if (chord == null || GetCurrentLevel() == null)
+            Debug.LogError("Something went wrong");
+        return chord.GestureSos[currentIngredient];
+    }
 }

@@ -1016,3 +1016,9 @@ Received Import Request.
 Start importing Assets/_PROJECT/Art/Gestures/Take.png using Guid(a3000d1b297e3244e84cb4bfcb90cc3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fb0d3dcf6d074e0b4bee47e507f801a') in 0.035882 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 3
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
