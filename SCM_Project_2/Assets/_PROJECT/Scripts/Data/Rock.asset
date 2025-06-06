@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gestureName: Rock
   icon: {fileID: 21300000, guid: a5170ec83e198c34b9140da06a9096e0, type: 3}
+  audioClip: {fileID: 8300000, guid: bc0e4b776f53e6648b71d6b60b785a58, type: 3}

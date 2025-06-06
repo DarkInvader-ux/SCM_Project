@@ -40,15 +40,11 @@ namespace _PROJECT.Scripts.Managers
             }
         }
 
-        public ChordSO GetCurrentPotion()
+        public ChordSO GetCurrentChord()
         {
             return levels[currentLevelIndex].Chord;
         }
-    
-        // public PotionController GetPotionController()
-        // {
-        //     return currentPotionController; 
-        // }
+
         private void OnEnable()
         {
             EventManager.ONGestureCompleted += OnIngredientComplete;
@@ -101,9 +97,9 @@ namespace _PROJECT.Scripts.Managers
             return GetCurrentLevel()?.requiredHoldTime ?? 0f;
         }
 
-        public GestureSO GetIngredient()
+        public GestureSO GetGesture()
         {
-            var chord = GetCurrentPotion();
+            var chord = GetCurrentChord();
             var currentIngredient = GetCurrentLevel().currentIngredient;
             if (chord == null || GetCurrentLevel() == null)
                 Debug.LogError("Something went wrong");

@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,10 +28,10 @@ namespace _PROJECT.Scripts.Managers
         }
         private async void UpdatePanel()
         {
-            // await Task.Delay(50);
-            // var ingredient = levelManager.GetIngredient();
-            // txtPotionName.SetText(ingredient.IngredientName);
-            // gestureImage.sprite = ingredient.İngredientImage;
+            await Task.Delay(50);
+            var gestureSo = levelManager.GetGesture();
+            txtPotionName.SetText(gestureSo.GestureName);
+            gestureImage.sprite = gestureSo.Icon;
         }
     }
 }

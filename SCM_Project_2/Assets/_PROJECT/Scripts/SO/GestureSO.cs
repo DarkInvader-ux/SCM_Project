@@ -10,8 +10,12 @@ namespace _PROJECT.Scripts.SO
         private string gestureName;
         [FormerlySerializedAs("Icon")] [SerializeField]
         private Sprite icon;
+        
+        [SerializeField]
+        private AudioClip audioClip;
     
         public Sprite Icon { get => icon; set => icon = value; }
         public string GestureName { get => gestureName; set => gestureName = value; }
+        public AudioClip AudioClip { get => audioClip; set => audioClip = value; }
     }
 }

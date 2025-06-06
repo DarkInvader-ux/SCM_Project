@@ -17,6 +17,8 @@ namespace _PROJECT.Scripts.Managers
         [SerializeField] private bool catchingGesture;
     
         private float currentFillTime = 0f;
+        
+        private bool _hasAudioStarted = false;
 
         private void OnEnable()
         {
@@ -46,12 +48,17 @@ namespace _PROJECT.Scripts.Managers
         {
             if (!isActive) return;
 
-            var currentGesture = receiver.GetGesture();
-            var targetGesture = levelManager.GetIngredient();
+            var currentGestureStr = receiver.GetGesture();
+            var targetGesture = levelManager.GetGesture();
 
             // If the gesture matches, start filling the bar
-            if (string.Equals(currentGesture, targetGesture.GestureName, StringComparison.CurrentCultureIgnoreCase))
+            if (string.Equals(currentGestureStr, targetGesture.GestureName, StringComparison.CurrentCultureIgnoreCase))
             {
+                if (!_hasAudioStarted)
+                {
+                    AudioManager.Instance.SetAudio(targetGesture.AudioClip);
+                    _hasAudioStarted = true;
+                }
                 catchingGesture = true;
                 FillBar(levelManager.GetFillTime());
             }
@@ -62,7 +69,9 @@ namespace _PROJECT.Scripts.Managers
                     // Gesture failed, reset the bar
                     ResetBar();
                     catchingGesture = false;
+                    _hasAudioStarted = false;
                     Debug.LogWarning("Gesture catching failed");
+                    AudioManager.Instance.SetAudio(null);
                 }
             }
         }
@@ -89,10 +98,12 @@ namespace _PROJECT.Scripts.Managers
                 {
                     recognitionBar.fillAmount = 1f; // Make sure the bar is completely filled
                     catchingGesture = false; // Stop catching the gesture
+                    _hasAudioStarted = false;
                     EventManager.OnGestureCompleted();
                     ResetBar();
                     Debug.Log("Gesture completed successfully!");
                 }
+                
             }
         }
 
