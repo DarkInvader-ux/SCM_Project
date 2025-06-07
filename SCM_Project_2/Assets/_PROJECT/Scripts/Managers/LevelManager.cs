@@ -10,7 +10,7 @@ namespace _PROJECT.Scripts.Managers
         public class Level
         {
             public ChordSO Chord;
-            public float requiredHoldTime;
+            //public float requiredHoldTime;
             public int currentIngredient;
         }
 
