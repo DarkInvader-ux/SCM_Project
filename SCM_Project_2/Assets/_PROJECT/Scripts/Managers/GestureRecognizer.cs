@@ -86,13 +86,6 @@ namespace _PROJECT.Scripts.Managers
                 // Update the fill bar based on the time passed
                 recognitionBar.fillAmount = currentFillTime / fillDuration;
 
-                // Determine the potion ingredient fraction to fill
-                var level = levelManager.GetCurrentLevel();
-                float ingredientFraction = 1f / level.Chord.GestureSos.Count; // Divide potion into equal ingredient fractions
-            
-                // Fill the potion liquid based on the current ingredient fraction
-                //levelManager.GetPotionController().FillPotion(ingredientFraction * Time.deltaTime / fillDuration); // Incrementally fill based on time
-
                 // If the fill time exceeds the fill duration, stop the gesture process and update the potion and bar
                 if (currentFillTime >= fillDuration)
                 {
@@ -103,7 +96,6 @@ namespace _PROJECT.Scripts.Managers
                     ResetBar();
                     Debug.Log("Gesture completed successfully!");
                 }
-                
             }
         }
 

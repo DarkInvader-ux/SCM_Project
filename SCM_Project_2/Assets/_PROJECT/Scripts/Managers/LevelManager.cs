@@ -16,28 +16,26 @@ namespace _PROJECT.Scripts.Managers
 
         [SerializeField] private List<Level> levels = new();
         [SerializeField] private int currentLevelIndex;
-        //[SerializeField] private PotionController currentPotionController;
     
 
         private void Start()
         {
             currentLevelIndex = 0;
             EventManager.OnLevelStart();
-            StartGame();
+            //StartGame();
         }
 
         private void StartGame()
         {
-            var currentLevel = GetCurrentLevel();
-            if (currentLevel != null && currentLevel.Chord != null)
-            {
-                //GameObject potionInstance = Instantiate(currentLevel.Chord.potionPrefab, Vector3.zero, Quaternion.identity);
-                //currentPotionController = potionInstance.GetComponent<PotionController>();
-            }
-            else
-            {
-                Debug.LogError("No potion prefab found for the current level.");
-            }
+            // var currentLevel = GetCurrentLevel();
+            // if (currentLevel != null && currentLevel.Chord != null)
+            // {
+            //     
+            // }
+            // else
+            // {
+            //     Debug.LogError("No potion prefab found for the current level.");
+            // }
         }
 
         public ChordSO GetCurrentChord()
@@ -94,7 +92,8 @@ namespace _PROJECT.Scripts.Managers
 
         public float GetFillTime()
         {
-            return GetCurrentLevel()?.requiredHoldTime ?? 0f;
+            // return GetCurrentLevel()?.requiredHoldTime ?? 0f;
+            return  GetGesture()?.AudioClip.length ?? 0f;
         }
 
         public GestureSO GetGesture()
