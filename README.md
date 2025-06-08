@@ -51,7 +51,7 @@ Once you have recorded enough samples for each gesture (typically 50 samples per
   
 3. **Unity Application**
    - Once Gesture Recognition part is ready, you can now run the **GestureRecognition.py** then proceed to Unity and start playing the demo level.
-   - With each correct gesture a guitar riff will play and once you have successfully performed all the gestures you will get to here the complete version of the riff. 
+   - With each correct gesture a guitar riff will play and once you have successfully performed all the gestures you will get to hear the complete version of the riff. 
 
 ## Files
 
