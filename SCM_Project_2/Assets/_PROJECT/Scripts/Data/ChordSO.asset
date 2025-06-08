@@ -15,3 +15,5 @@ MonoBehaviour:
   GestureSos:
   - {fileID: 11400000, guid: 2f7f45fe3f968a04089587e5024480ae, type: 2}
   - {fileID: 11400000, guid: 8e9d36b35b399df4090b406fc43f2c0f, type: 2}
+  - {fileID: 11400000, guid: 2f7f45fe3f968a04089587e5024480ae, type: 2}
+  - {fileID: 11400000, guid: 93683f1dd45e51744bd903769974e3b9, type: 2}

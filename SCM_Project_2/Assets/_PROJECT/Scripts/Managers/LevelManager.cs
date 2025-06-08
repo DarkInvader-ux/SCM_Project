@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using _PROJECT.Scripts.SO;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _PROJECT.Scripts.Managers
 {
@@ -16,6 +19,8 @@ namespace _PROJECT.Scripts.Managers
 
         [SerializeField] private List<Level> levels = new();
         [SerializeField] private int currentLevelIndex;
+        [SerializeField] private AudioClip levelCompleteAudioClip;
+        [FormerlySerializedAs("LevelCompleteText")] [SerializeField] private TextMeshProUGUI levelCompleteText;
     
 
         private void Start()
@@ -72,7 +77,7 @@ namespace _PROJECT.Scripts.Managers
 
   
 
-        private void OnIngredientComplete()
+        private async void OnIngredientComplete()
         {
             var level = GetCurrentLevel();
             if (level == null) return;
@@ -82,6 +87,9 @@ namespace _PROJECT.Scripts.Managers
                 currentLevelIndex++;
                 EventManager.OnLevelCompleted();
                 Debug.LogError("level completed");
+                await Task.Delay(50);
+                AudioManager.Instance.SetAudio(levelCompleteAudioClip);
+                levelCompleteText.gameObject.SetActive(true);
             }
             else
             {

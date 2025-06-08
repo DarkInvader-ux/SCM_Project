@@ -409,15 +409,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - Chord: {fileID: 11400000, guid: 7b90c0217b9d54246815566bcc112f9c, type: 2}
-    requiredHoldTime: 3
     currentIngredient: 0
   - Chord: {fileID: 11400000, guid: 7b90c0217b9d54246815566bcc112f9c, type: 2}
-    requiredHoldTime: 5
     currentIngredient: 0
   - Chord: {fileID: 11400000, guid: 7b90c0217b9d54246815566bcc112f9c, type: 2}
-    requiredHoldTime: 8
     currentIngredient: 0
   currentLevelIndex: 0
+  levelCompleteAudioClip: {fileID: 8300000, guid: 03aee9d4e95e0224d98ce70804fb8c4f,
+    type: 3}
+  levelCompleteText: {fileID: 1849841185}
 --- !u!4 &470199530
 Transform:
   m_ObjectHideFlags: 0
@@ -1163,6 +1163,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1609757215}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1849841185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8455599888113018628, guid: 82b3a806ab1e0c942beb898094f539a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 651609717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1929733758
 GameObject:
   m_ObjectHideFlags: 0

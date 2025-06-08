@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bbebed90e05a6f4face26cd0ef68ae9, type: 3}
-  m_Name: Peace
+  m_Name: Rock
   m_EditorClassIdentifier: 
-  gestureName: Peace
-  icon: {fileID: 21300000, guid: d581ea997bb13914299c253f7d279ef5, type: 3}
-  audioClip: {fileID: 8300000, guid: bc0e4b776f53e6648b71d6b60b785a58, type: 3}
+  gestureName: Rock
+  icon: {fileID: 21300000, guid: a5170ec83e198c34b9140da06a9096e0, type: 3}
+  audioClip: {fileID: 8300000, guid: cd1625d9f0d7c3145b66bb98d2915841, type: 3}
