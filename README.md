@@ -48,6 +48,10 @@ Once you have recorded enough samples for each gesture (typically 50 samples per
    - During real-time recognition, the **RealtimeRecognition.py** script continuously processes webcam frames, extracting hand landmarks in each frame.
    - The classifier uses these features to predict the gesture being performed.
    - The recognized gesture is displayed along with its confidence percentage. If the model is confident enough, the predicted gesture is shown on the screen.
+  
+3. **Unity Application**
+   - Once Gesture Recognition part is ready, you can now run the **GestureRecognition.py** then proceed to Unity and start playing the demo level.
+   - With each correct gesture a guitar riff will play and once you have successfully performed all the gestures you will get to here the complete version of the riff. 
 
 ## Files
 
