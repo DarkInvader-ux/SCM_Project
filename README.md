@@ -4,7 +4,7 @@ This project allows you to record hand gestures using a webcam and recognize the
 
 ## Requirements
 
-Before running the project, ensure you have Python 3.x installed. Then, install the required libraries:
+Before running the project, ensure you have Python 3.x installed and for the Unity Engine install 2022.3.26f1. Then, install the required libraries:
 
 - **opencv-python**: For accessing the webcam and processing the video stream.
 - **mediapipe**: For detecting hand landmarks.
