@@ -40,7 +40,7 @@ Once you have recorded enough samples for each gesture (typically 50 samples per
 1. **Model Training**:
    - The **DataCollection.py** script uses **MediaPipe** to detect hand landmarks and capture the position of key points in the hand. These landmarks are saved as feature vectors.
    - When recording, the program collects multiple samples of each gesture, which are saved in a structured format for later training.
-   - The recorded gesture data is used to train a machine learning classifier (e.g., **RandomForestClassifier** or **MLPClassifier** from **scikit-learn**).
+   - The recorded gesture data is used to train a machine learning classifier (e.g.,  **MLPClassifier** from **scikit-learn**).
    - The model is trained using the features extracted from the hand landmarks, such as distances between key points, normalized positions, and other relevant metrics.
    - The trained model is saved as a `.pkl` file for future use in real-time recognition.
 
